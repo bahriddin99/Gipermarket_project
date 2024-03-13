@@ -12,7 +12,7 @@ const settings = {
     autoplay: true,
     slidesToShow: 5,
     autoplaySpeed: 1000,
-    slidesToScroll: 6,
+    slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };

@@ -1,18 +1,21 @@
 import React from "react";
 import { Call } from "../../imgs-icon/icons/call";
-import logo from "../../imgs-icon/imgs/logo.svg";
+import {Logo} from "../../imgs-icon/icons/logo"
 import { Vector } from "../../imgs-icon/icons/vector";
 import { Karzinkaa } from "../../imgs-icon/icons/card";
 import { Like } from "../../imgs-icon/icons/like";
 import { Link, useNavigate } from "react-router-dom";
 import { HeaderContact } from "./header-contact";
 import { SearchInput } from "../../componets/form/searchs";
+import { useSelector } from "react-redux";
 
 export const Header = () => {
- const navigate = useNavigate()
-const cartnavigate =()=>{
-   navigate("/karzinka")
-}
+  const { count } = useSelector((state) => state.product);
+  
+  const navigate = useNavigate();
+  const cartnavigate = () => {
+    navigate("/karzinka");
+  };
   return (
     <div className="bg-header">
       <section className="Call pt-3 pb-3  container">
@@ -31,11 +34,13 @@ const cartnavigate =()=>{
 
       <main className="Logo mt-2  bg-header container pb-7">
         <div className="">
-          <div className="flex gap-8 item-center relative ">
-            <img src={logo} alt="logo" />
-            <div className="flex gap-2 border-2  rounded-md w-[150px] p-[10px] text-xl items-center">
+          <div className="flex gap-8 item-center relative  ">
+            <Link to={"/"} className="items-center flex">
+              <Logo/>
+            </Link>
+            <Link to={""} className="flex gap-2 border-2  rounded-md w-[150px] p-[10px] text-xl items-center">
               <Vector /> Каталог
-            </div>
+            </Link>
             <div className="relative flex gap-[700px]">
               <SearchInput />
               <div className="flex  gap-6">
@@ -45,11 +50,16 @@ const cartnavigate =()=>{
                   <p className="text-black ">Избранное</p>
                 </div>
 
-               
-                  <button onClick={cartnavigate} className="flex flex-col items-center">
-                      <Karzinkaa />
-                    <p className="text-black ">Корзина</p>
-                 
+              
+                <button
+                  onClick={cartnavigate}
+                  className="flex flex-col items-center relative"
+                >
+                    <span className="w-[16px] h-[16px] rounded-full bg-red-500 absolute text-[10px] text-white ml-6 mt-[-6px]">
+                  {count}
+                </span>
+                  <Karzinkaa />
+                  <p className="text-black ">Корзина</p>
                 </button>
               </div>
             </div>

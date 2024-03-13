@@ -10,8 +10,8 @@ export const PhoneNoutbookCard = ({ img, name, price, discount,id, datakey }) =>
         <div className="flex flex-col  h-[110px] justify-between pt-4">
           <h1>{name}</h1>
           <div className="flex gap-2 pt-4">
-            <p className="font-bold ">{price}</p>
-            <p className="line-through">{discount}</p>
+            <p className="font-bold ">{price}$</p>
+            <p className="line-through">{discount}$</p>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import logo from "../../imgs-icon/imgs/logo.svg"
+import { Logo } from "../../imgs-icon/icons/logo";
 import { Facebook } from "../../imgs-icon/icons/facebook";
 import { Adnak } from "../../imgs-icon/icons/adnak";
 import { Vkontak } from "../../imgs-icon/icons/vkontak";
@@ -17,7 +17,7 @@ export const Footer = () => {
       <footer className="bg-footer pt-7 pb-7">
         <div className="container  grid grid-cols-4">
           <div className="">
-            <img src={logo} alt="logo" />
+            <Logo/>
             <div className="pt-3">
               <h1 className="font-bold text-[21px]">+998906477999</h1>
               <p>справочная служба</p>
